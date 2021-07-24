@@ -1,0 +1,12 @@
+version: '3.2'
+services: 
+    app:
+        build:
+            context: .
+            dockerfile: ./docker/Dockerfile
+        container_name: granchallenge
+        volumes:
+            - ./.:/var/www/html
+        ports: 
+            - "8070:80"
+        privileged: true
