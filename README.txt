@@ -30,3 +30,4 @@ Opção 2: Docker
       dependências do projeto.
     - acessar no navegador o endereço http://localhost:8070/
 
+O arquivo será gerado na pasta 'reports' com o nome informado no arquivo index.php
