@@ -1,5 +1,9 @@
 <?php
 
+/*
+ * @author André Oliveira de Araujo
+*/ 
+
 use \Smalot\PdfParser\Parser;
 
 define('CONCURSO_PATTERN_PDF', "/([0-9]+,\s*[a-z0-9 \s*]+\s*,\s*[0-9]+,\s*[0-9 .]+)/i");
@@ -25,7 +29,7 @@ class FileHelper
     return strip_tags($this->pdf->getText());
   }
 
-  public function xlsToCsv($text)
+  public function csvToXls($text)
   {
     return str_replace(',', ';', $text);
   }
@@ -64,7 +68,7 @@ class FileHelper
 
     // Inserção dos dados no arquivo
     $header = "Inscrição,Nome,Acertos,Nota,Vaga Deficiência";
-    $header = $extension === 'csv' ? $header : $this->xlsToCsv($header);
+    $header = $extension === 'xls' ? $header : $this->csvToXls($header);
   
     fwrite($csvFile, utf8_decode($header));
 
@@ -76,7 +80,7 @@ class FileHelper
       $linha .= "{$candidato['nota']},";
       $linha .= "{$candidato['cota']}";
 
-      $linha = $extension === 'csv' ? $linha : $this->xlsToCsv($linha);
+      $linha = $extension === 'xls' ? $linha : $this->csvToXls($linha);
 
       fwrite($csvFile, utf8_decode($linha));
     }
