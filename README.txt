@@ -7,7 +7,6 @@ Instruções seguidas na codificação do projeto:
   - Utilize expressões regulares;
   - Deve ser feito com PHP.
 
-
 Como executar o projeto:
 
 Opção 1: Command Line (CMD, BASH, PowerShell) [RECOMENDADO]
@@ -17,7 +16,6 @@ Opção 1: Command Line (CMD, BASH, PowerShell) [RECOMENDADO]
   Passos: 
     - executar o comando 'composer install' (sem as aspas) para instalar as dependências do projeto
     - executar o comando 'php index.php' (sem as aspas) para executar o script
-
 
 Opção 2: Docker
   Requisitos: 
